@@ -54,12 +54,12 @@
 		7FA0B5521C2F218B00611502 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				7FA0B5531C2F218B00611502 /* AppDelegate.swift */,
-				7FA0B5551C2F218B00611502 /* ViewController.swift */,
 				7FA0B5571C2F218B00611502 /* Main.storyboard */,
-				7FA0B55A1C2F218B00611502 /* Assets.xcassets */,
 				7FA0B55C1C2F218B00611502 /* LaunchScreen.storyboard */,
+				7FA0B5551C2F218B00611502 /* ViewController.swift */,
 				7FA0B55F1C2F218B00611502 /* Info.plist */,
+				7FA0B5531C2F218B00611502 /* AppDelegate.swift */,
+				7FA0B55A1C2F218B00611502 /* Assets.xcassets */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
