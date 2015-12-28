@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PokemonSolid.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -30,12 +35,26 @@
                                             <constraint firstAttribute="height" constant="40" id="sxc-e7-nvY"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eX-4c-ggF" userLabel="btn-music">
+                                        <rect key="frame" x="560" y="24" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="BHJ-fN-Qjk"/>
+                                            <constraint firstAttribute="width" constant="32" id="arZ-rF-5MK"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                        <state key="normal" image="img-toolbar"/>
+                                        <connections>
+                                            <action selector="musicButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xMm-7n-28V"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="OXj-v0-D2L" firstAttribute="centerX" secondItem="1gb-Go-4dM" secondAttribute="centerX" id="7kk-eJ-oXD"/>
                                     <constraint firstAttribute="height" constant="64" id="rTP-Ja-nUt"/>
                                     <constraint firstAttribute="bottom" secondItem="OXj-v0-D2L" secondAttribute="bottom" constant="4" id="sWD-J1-WZ5"/>
+                                    <constraint firstAttribute="trailing" secondItem="7eX-4c-ggF" secondAttribute="trailing" constant="8" id="uoQ-fY-R1j"/>
+                                    <constraint firstAttribute="bottom" secondItem="7eX-4c-ggF" secondAttribute="bottom" constant="8" id="x1f-V4-9Mw"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="hvj-wb-SHw">
@@ -71,8 +90,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="zmF-xF-Ay6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="0.79607843137254897" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -128,5 +147,6 @@
         <image name="297" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="img-header" width="140" height="42"/>
+        <image name="img-toolbar" width="60" height="57"/>
     </resources>
 </document>
