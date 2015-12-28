@@ -199,6 +199,9 @@
                                             <constraint firstAttribute="height" constant="32" id="Y3k-3V-cAo"/>
                                         </constraints>
                                         <state key="normal" image="img-back-arrow"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="qMJ-HK-OtH" eventType="touchUpInside" id="uvC-rY-Wp1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,7 +336,7 @@
                                                 <color key="textColor" red="1" green="0.3411764706" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCg-ah-W6K" userLabel="lblattack">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCg-ah-W6K" userLabel="lbl-attack">
                                                 <rect key="frame" x="420" y="0.0" width="140" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.14901960780000001" green="0.44705882349999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -381,7 +384,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7IG-tt-H9C" secondAttribute="trailing" id="0O4-kU-uCJ"/>
                             <constraint firstItem="7IG-tt-H9C" firstAttribute="top" secondItem="Y8k-7G-JOT" secondAttribute="bottom" constant="20" id="5Ch-Sg-QiK"/>
@@ -398,6 +401,18 @@
                             <constraint firstItem="qYc-4i-ptj" firstAttribute="top" secondItem="7IG-tt-H9C" secondAttribute="bottom" constant="20" id="wE9-os-vAm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="attackLabel" destination="vCg-ah-W6K" id="Puz-sI-VM5"/>
+                        <outlet property="avatarImage" destination="vA9-iY-9JN" id="qz6-KO-Ahv"/>
+                        <outlet property="defenseLabel" destination="yDx-2k-WXC" id="WRd-vb-L9B"/>
+                        <outlet property="descriptionLabel" destination="nTC-Bj-duz" id="5EO-8T-c6d"/>
+                        <outlet property="heightLabel" destination="O2V-RY-JsY" id="9tT-HV-SfC"/>
+                        <outlet property="hollowTitleLabel" destination="eRz-W0-V1L" id="yh6-0u-UDM"/>
+                        <outlet property="pokeIdLabel" destination="f1x-rg-zXd" id="XEy-xu-Hq7"/>
+                        <outlet property="solidTitleLabel" destination="JPM-3a-9UX" id="7Wt-tE-rUJ"/>
+                        <outlet property="typeLabel" destination="tcX-f6-OCe" id="miH-TQ-VgR"/>
+                        <outlet property="weightLabel" destination="2Ja-8s-x3Z" id="RaD-GO-zVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0z-rr-8yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
