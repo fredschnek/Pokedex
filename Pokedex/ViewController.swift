@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    // MARK: --- Properties ---
+    var pokemon = [Pokemon]()
+    
     // MARK: --- IBOutlets ---
     @IBOutlet weak var collection: UICollectionView!
     
@@ -20,6 +23,14 @@ class ViewController: UIViewController
         
         collection.delegate = self
         collection.dataSource = self
+        
+        parsePokemonCSV()
+    }
+    
+    // MARK: --- Utility Functions ---
+    func parsePokemonCSV()
+    {
+        
     }
 }
 
