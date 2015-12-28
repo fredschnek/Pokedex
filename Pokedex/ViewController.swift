@@ -49,6 +49,18 @@ class ViewController: UIViewController
         }
     }
     
+    // MARK: --- Navigation ---
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "PokemonDetailVC" {
+            if let detailsVC = segue.destinationViewController as? PokemonDetailVC {
+                if let poke = sender as? Pokemon {
+                    detailsVC.pokemon = poke
+                }
+            }
+        }
+    }
+    
     // MARK: --- Utility Functions ---
     func initAudio()
     {
@@ -81,15 +93,6 @@ class ViewController: UIViewController
         } catch let err as NSError {
             print(err.debugDescription)
         }
-    }
-}
-
-// MARK: --- UICollectionViewDelegate Extension ---
-extension ViewController : UICollectionViewDelegate
-{
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
-    {
-        
     }
 }
 
@@ -126,6 +129,23 @@ extension ViewController : UICollectionViewDataSource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
     {
         return 1
+    }
+}
+
+// MARK: --- UICollectionViewDelegate Extension ---
+extension ViewController : UICollectionViewDelegate
+{
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        var poke: Pokemon!
+        
+        if inSearchMode {
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            poke = pokemon[indexPath.row]
+        }
+        
+        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
     }
 }
 
