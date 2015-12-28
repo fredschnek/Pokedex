@@ -241,9 +241,9 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="3376" translatesAutoresizingMaskIntoConstraints="NO" id="nTC-Bj-duz" userLabel="lbl-description">
                                                 <rect key="frame" x="124" y="0.0" width="436" height="120"/>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla tellus sem, quis tempor mauris iaculis vel. Aenean velit odio, interdum et convallis a, scelerisque in purus. Etiam quis tortor ac dui tristique aliquet at rhoncus nibh. Nullam interdum odio sit amet nisl venenatis ullamcorper. Curabitur iaculis non justo in tincidunt. Vestibulum vitae facilisis mauris, ut porttitor risus. Quisque nec est sed lectus viverra vehicula. Sed aliquam sapien non ante cursus ullamcorper. Aliquam erat volutpat.
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla tellus sem, quis tempor mauris iaculis vel. Aenean velit odio, interdum et convallis a, scelerisque in purus. Etiam quis tortor ac dui tristique aliquet at rhoncus nibh. Nullam interdum odio sit amet nisl venenatis ullamcorper. Curabitur iaculis non justo in tincidunt. Vestibulum vitae facilisis mauris, ut porttitor risus. Quisque nec est sed lectus viverra vehicula. Sed aliquam sapien non ante cursus ullamcorper. Aliquam erat volutpat.
 
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
