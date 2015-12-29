@@ -11,10 +11,10 @@ import Foundation
 public class CSVParser
 {
     // MARK: --- Properties ---
-    public var rows:    [Dictionary<String, String>] = []
+    public var rows:    [[String: String]] = []
     public var headers: [String] = []
 
-    public var columns = Dictionary<String, [String]>()
+    public var columns = [String: [String]]()
     var delimiter = NSCharacterSet(charactersInString: ",")
     
     // MARK: --- Initializers ---
@@ -53,16 +53,16 @@ public class CSVParser
         return lines[0].componentsSeparatedByCharactersInSet(self.delimiter)
     }
     
-    func parseRows(fromLines lines: [String]) -> [Dictionary<String, String>]
+    func parseRows(fromLines lines: [String]) -> [[String: String]]
     {
-        var rows: [Dictionary<String, String>] = []
+        var rows: [[String: String]] = []
         
         for (lineNumber, line) in lines.enumerate() {
             if lineNumber == 0 {
                 continue
             }
             
-            var row = Dictionary<String, String>()
+            var row = [String: String]()
             let values = line.componentsSeparatedByCharactersInSet(self.delimiter)
             for (index, header) in self.headers.enumerate() {
                 if index < values.count {
@@ -77,9 +77,9 @@ public class CSVParser
         return rows
     }
     
-    func parseColumns(fromLines lines: [String]) -> Dictionary<String, [String]>
+    func parseColumns(fromLines lines: [String]) -> [String: [String]]
     {
-        var columns = Dictionary<String, [String]>()
+        var columns = [String: [String]]()
         
         for header in self.headers {
             let column = self.rows.map {

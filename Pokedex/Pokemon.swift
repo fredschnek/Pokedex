@@ -113,7 +113,7 @@ class Pokemon
         Alamofire.request(.GET, url).responseJSON { response in
             let result = response.result
             
-            if let dict = result.value as? Dictionary<String, AnyObject> {
+            if let dict = result.value as? [String: AnyObject] {
                 
                 // Attributes
                 if let weight = dict["weight"] as? String {
@@ -130,14 +130,14 @@ class Pokemon
                 }
                 
                 // Types
-                if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
+                if let types = dict["types"] as? [[String: String]] where types.count > 0 {
 
                     if let name = types[0]["name"] {
                         self._type = name.capitalizedString
                     }
                     
                     if types.count > 1 {
-                        for var x = 1; x < types.count; x++ {
+                        for x in 1..<types.count {
                             if let name = types[x]["name"] {
                                 self._type! += " / \(name.capitalizedString)"
                             }
@@ -148,18 +148,17 @@ class Pokemon
                 }
                 
                 // Description
-                if let descArray = dict["descriptions"] as? [Dictionary<String, String>] where descArray.count > 0 {
+                if let descArray = dict["descriptions"] as? [[String: String]] where descArray.count > 0 {
                     
                     if let url = descArray[0]["resource_uri"] {
                         let nsurl = NSURL(string: "\(baseURL)\(url)")!
                         Alamofire.request(.GET, nsurl).responseJSON { response in
                             let descResult = response.result
-                            if let descDict = descResult.value as? Dictionary<String, AnyObject> {
+                            if let descDict = descResult.value as? [String: AnyObject] {
                                 if let description = descDict["description"] as? String {
                                     self._description = description
                                 }
                             }
-                            
                             completed()
                         }
                     }
@@ -168,7 +167,7 @@ class Pokemon
                 }
                 
                 // Next Evolution
-                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0 {
+                if let evolutions = dict["evolutions"] as? [[String: AnyObject]] where evolutions.count > 0 {
                     
                     if let to = evolutions[0]["to"] as? String {
                         // If it's not a Mega
