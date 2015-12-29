@@ -23,7 +23,7 @@ class ViewController: UIViewController
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar : UISearchBar!
     
-    // MARK: --- VC Lifecycle ---    
+    // MARK: --- VC Lifecycle ---
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -31,7 +31,15 @@ class ViewController: UIViewController
         collection.delegate = self
         collection.dataSource = self
         searchBar.delegate = self
+        
+        // Setup the search bar attributes
+        // TODO: Consider moving it to a View Class
         searchBar.returnKeyType = UIReturnKeyType.Done
+        searchBar.setImage(UIImage(named: "img-magnifier"), forSearchBarIcon: UISearchBarIcon.Search, state: UIControlState.Normal)
+        let textFieldInsideSearchBar = searchBar.valueForKey("searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.whiteColor()
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.valueForKey("placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = UIColor.whiteColor()
         
         initAudio()
         parsePokemonCSV()
